@@ -1,8 +1,8 @@
 ﻿@model project3.Models.applicant
 <link rel="stylesheet" type="text/css" href="~/styles/1.css">
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Hired";
+    Layout = "~/Areas/Interviewer/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
@@ -18,14 +18,14 @@
     <div class="col-div-4">
         <div class="content-box">
             <p class="head">Contact</p>
-            <p ><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;@Html.DisplayFor(model => model.phone)</p>
-            <p ><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp;@Html.DisplayFor(model => model.email)</p>
-            <p ><i class="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp;Viet Nam</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;@Html.DisplayFor(model => model.phone)</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp;@Html.DisplayFor(model => model.email)</p>
+            <p><i class="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp;Viet Nam</p>
 
 
             <br />
             <p class="head">my skills</p>
-            <p >
+            <p>
                 @Html.DisplayFor(model => model.skills)
             </p>
 
@@ -38,8 +38,8 @@
 
             <br />
             <p class="head">Languages</p>
-            <p >VietNamese</p>
-            <p >English</p>
+            <p>VietNamese</p>
+            <p>English</p>
         </div>
     </div>
     <div class="line"></div>
@@ -57,14 +57,14 @@
             <br />
 
             <p class="head">Education</p>
-            <span style="white-space: pre-line">@Model.education</span>     
+            <span style="white-space: pre-line">@Model.education</span>
         </div>
     </div>
 
     <div class="clearfix"></div>
 
-    
+
 </div>
 <p class="btn btn-default">
     @Html.ActionLink("Back to List", "Index")
-</p>
+

@@ -2,7 +2,7 @@
 @using PagedList.Mvc
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Quản lí ứng viên";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -42,8 +42,6 @@
                                     @Html.DisplayNameFor(model => model.First().id)
                                 </th>
                                 <th>
-                                    @*@Html.DisplayNameFor(model => model.First().display_name)*@
-                                    @*@Html.ActionLink("applicants", "Index", new { SortOrder = "Name", @style = "decoration:none" })*@
                                     <a style="text-decoration:none" href="@Url.Action("Index","applicants", new { SortOrder = ViewBag.NameSortParm})">Applicants @*<i class="fas fa-sort-alpha-down-alt"></i>*@</a>
                                 </th>
                                 <th>
@@ -54,7 +52,7 @@
                                 </th>
                                 <th>
                                     @*@Html.DisplayNameFor(model => model.First().status)*@
-                                    @Html.ActionLink("Status", "Index", new { SortOrder = ViewBag.StatusSortParm, @style = "decoration:none" })
+                                    <a style="text-decoration:none" href="@Url.Action("Index","applicants", new { SortOrder = ViewBag.StatusSortParm})">Status </a>
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.First().createAt)

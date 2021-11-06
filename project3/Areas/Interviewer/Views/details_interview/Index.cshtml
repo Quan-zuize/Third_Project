@@ -65,10 +65,14 @@
                                             @Html.DisplayFor(modelItem => item.id)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.applicant.display_name)
+                                            <a href="/Interviewer/details_interview/Hired/@item.applicantId">
+                                                @Html.DisplayFor(modelItem => item.applicant.display_name)
+                                            </a>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.vacancy.title)
+                                            <a href="/Interviewer/details_interview/Vacancy/@item.vacancyId">
+                                                @Html.DisplayFor(modelItem => item.vacancy.title)
+                                            </a>
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.time)

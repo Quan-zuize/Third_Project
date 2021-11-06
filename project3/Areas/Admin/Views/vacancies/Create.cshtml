@@ -57,7 +57,7 @@
                                         <div class="col-md-10">
                                             @Html.DropDownListFor(model => model.status, new List<SelectListItem> {
                                             new SelectListItem { Value = "Open",Text="Open" },
-                                            new SelectListItem { Value = "Close",Text="Close" },},
+                                            new SelectListItem { Value = "Close",Text="Close" },
                                             new { @class = "myselect" })
                                             @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
                                             @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })

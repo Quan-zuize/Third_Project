@@ -22,7 +22,7 @@ namespace project3.Areas.Admin.Controllers
             var applicants = db.applicants.ToList();
             if (!String.IsNullOrWhiteSpace(search))
             {
-                applicants = applicants.Where(x => x.id.Equals(search) || x.display_name.Contains(search)).ToList();
+                applicants = applicants.Where(x => x.id.Contains(search) || x.display_name.Contains(search)).ToList();
             }
             ViewBag.NameSortParm = String.IsNullOrEmpty(SortOrder) ? "name_desc" : "";
             ViewBag.StatusSortParm = SortOrder == "Status" ? "Status" : "Status_desc";
@@ -125,12 +125,13 @@ namespace project3.Areas.Admin.Controllers
             applicant.display_name = display_name;
             applicant.email = email;
 
-            string path = Path.Combine(Server.MapPath("~/image/applicant"), Path.GetFileName(image.FileName));
+            string path = Path.Combine(Server.MapPath("~/images/applicant"), image.FileName);
             image.SaveAs(path);
-
+            applicant.image = "/applicant/" + image.FileName;
             if (ModelState.IsValid)
             {
                 db.applicants.Add(applicant);
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Create succesfully";
                 return RedirectToAction("Index");

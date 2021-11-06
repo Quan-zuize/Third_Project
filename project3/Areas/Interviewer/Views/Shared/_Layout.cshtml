@@ -55,7 +55,6 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="/assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
@@ -66,8 +65,11 @@
     <script src="/assets/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="/assets/admin/dist/js/sb-admin-2.js?version=1"></script>
-    @*@System.Web.Optimization.Scripts.Render("~/bundles/jquery")
-        @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")*@
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!-- all line chart activation -->
     @RenderSection("scripts", required: false)
 </body>
 </html>

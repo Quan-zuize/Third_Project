@@ -27,12 +27,16 @@ namespace project3.Models
         [Display(Name = "Applicant ID")]
         public string id { get; set; }
         [Display(Name = "Target")]
+        [MaxLength(500)]
         public string target { get; set; }
         [Display(Name = "Experiences")]
+        [MaxLength(1000)]
         public string experience { get; set; }
         [Display(Name = "Education")]
+        [MaxLength(1000)]
         public string education { get; set; }
         [Display(Name = "Skills")]
+        [MaxLength(255)]
         public string skills { get; set; }
         [Display(Name = "Status")]
         public string status { get; set; }
@@ -43,16 +47,17 @@ namespace project3.Models
         [Required]
         [Display(Name = "Phone")]
         [DataType(DataType.PhoneNumber)]
-        [MinLength(10)]
+        [MinLength(9)]
         public string phone { get; set; }
         [Display(Name = "Photo")]
+        [MaxLength(255)]
         [DataType(DataType.Upload)]
         [RegularExpression(@"([a-zA-Z0-9\s_\.-:])+(.png|.jpg|.gif)$", ErrorMessage = "Yêu cầu nhập đúng định dạng ảnh .png|.jpg|.gif")]
         public string image { get; set; }
         [Display(Name = "User name")]
         public string username { get; set; }
         [RegularExpression(@"^((?=.*[a-z])|(?=.*[A-Z])|(?=.*\d)).{5,}$", ErrorMessage = "Password must have at least 5 characters and no special signs.")]
-        [MinLength(5)]
+        //[MinLength(5)]
         [Display(Name = "Password")]
         public string password { get; set; }
         [Required]

@@ -55,7 +55,7 @@ namespace project3.Controllers
                                 case "D003":
                                     return RedirectToAction("Index", "Home", new { area = "Admin"});                                    
                                 default:
-                                    return RedirectToAction("Index", "details_interview", new { area = "Interviewer" });
+                                    return RedirectToAction("Index", "Home", new { area = "Interviewer" });
                             }
                         }
                     }

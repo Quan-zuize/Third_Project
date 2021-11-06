@@ -1,4 +1,4 @@
-﻿using project3.Areas.Admin.Models;
+﻿using project3.Areas.Interviewer.Models;
 using project3.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 
-namespace project3.Areas.Admin.Controllers
+namespace project3.Areas.Interviewer.Controllers
 {
     public class HomeController : Controller
     {

@@ -32,7 +32,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-9">
-                        @using (Html.BeginForm("Create", "applicants", FormMethod.Post))
+                        @using (Html.BeginForm("Create", "applicants", FormMethod.Post, new { enctype = "multipart/form-data"}))
                         {
                             @Html.AntiForgeryToken()
                             <h3 style="font-weight:600;color:cornflowerblue;font-family:sans-serif">Personal Information</h3>

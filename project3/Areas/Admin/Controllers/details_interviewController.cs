@@ -219,9 +219,6 @@ namespace project3.Areas.Admin.Controllers
                 }
             }
         }
-
-
-
         public void Error()
         {
             TempData["alertBg"] = "#ffdb9b";

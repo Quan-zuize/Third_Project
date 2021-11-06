@@ -1,7 +1,7 @@
-﻿@model project3.Areas.Admin.Models.Home
+﻿@model project3.Areas.Interviewer.Models.Home
 @{
     ViewBag.Title = "Dashboard";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Interviewer/Views/Shared/_Layout.cshtml";
 }
 @section header {
     Dashboard
@@ -23,7 +23,6 @@
                             <h1>@Html.DisplayFor(model => model.vacancies.Count)</h1>
                             <div class="icon seofct-icon"><i class="fas fa-briefcase"></i></div>
                         </div>
-                        <a href="/Admin/vacancies/Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -39,7 +38,6 @@
                             <h1>@Html.DisplayFor(model => model.departments.Count)</h1>
                             <div class="icon seofct-icon"><i class="fas fa-users"></i></div>
                         </div>
-                        <a href="#" class="small-box-footer" style="color:#fff">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -55,7 +53,6 @@
                             <h1>@Html.DisplayFor(model => model.employees.Count)</h1>
                             <div class="icon seofct-icon"><i class="fas fa-user-tie"></i></div>
                         </div>
-                        <a href="#" class="small-box-footer" style="color:#fff">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -71,7 +68,6 @@
                             <h1>@Html.DisplayFor(model => model.applicants.Count)</h1>
                             <div class="icon seofct-icon"><i class="fas fa-user-md"></i></div>
                         </div>
-                        <a href="/Admin/applicants/Index" class="small-box-footer" style="color:#fff">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -100,25 +96,25 @@
                         <div id="progress">
                             @*<div class="progress">
 
-                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span>abcxyz</span>
-                            <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>abcxyz</span>
+                                <div class="progress">
 
-                                <div class="progress-bar progress-bar-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <br>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <br>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <br>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>*@
+                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>*@
                         </div>
                     </div>
                 </div>
@@ -225,7 +221,7 @@
 <script>
     $(document).ready(function () {
         //$.getJSON("GetData_Applicant", function (data) {
-        $.getJSON("Admin/Home/GetData_Applicant", function (data) {
+        $.getJSON("Home/GetData_Applicant", function (data) {
             var Names = []
             var Qts = []
             for (var i = 0; i < data.length; i++) {
@@ -263,7 +259,7 @@
             });
         });
         //$.getJSON("GetData_Vacancy", function (result) {
-        $.getJSON("Admin/Home/GetData_Vacancy", function (result) {
+        $.getJSON("Home/GetData_Vacancy", function (result) {
             var rs = JSON.parse(result.data)
             var Chart = $('#progress');
             Chart.html("");
@@ -279,11 +275,13 @@
             var row_3 = '<span>' + data[2].title + '</span><div class="progress "><div class="progress-bar progress-bar-info" role="progressbar" style="width:' + length_2 / data[2].required * 100 + '%' + '" aria-valuenow="' + length_2 / data[2].required * 100 + '" aria-valuemin="0" aria-valuemax="100">' + length_2 + ' of ' + data[2].required + '</div></div>';
             var row_4 = '<span>' + data[3].title + '</span><div class="progress "><div class="progress-bar progress-bar-warning" role="progressbar" style="width:' + length_3 / data[3].required * 100 + '%' + '" aria-valuenow="' + length_3 / data[3].required * 100 + '" aria-valuemin="0" aria-valuemax="100">' + length_3 + ' of ' + data[3].required + '</div></div>';
             var row_5 = '<span>' + data[4].title + '</span><div class="progress"><div class="progress-bar" role="progressbar" style="width: progress-bar-danger' + length_4 / data[4].required * 100 + '%' + '" aria-valuenow="' + length_4 / data[4].required * 100 + '" aria-valuemin="0" aria-valuemax="100">' + length_4 + ' of ' + data[4].required + '</div></div>';
-            Chart.append(row_1);    
-            Chart.append(row_2);  
-            Chart.append(row_3);  
-            Chart.append(row_4);  
-            Chart.append(row_5);  
+            Chart.append(row_1);
+            Chart.append(row_2);
+            Chart.append(row_3);
+            Chart.append(row_4);
+            Chart.append(row_5);
         });
     });
 </script>
+
+

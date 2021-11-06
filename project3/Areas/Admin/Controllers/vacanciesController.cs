@@ -67,7 +67,6 @@ namespace project3.Areas.Admin.Controllers
             }
             return View(vacancies.ToPagedList(i ?? 1, 10));
         }
-
         public ActionResult Hired(string id)
         {
             var applicants = db.applicants.ToList();

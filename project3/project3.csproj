@@ -141,7 +141,9 @@
     <Compile Include="Areas\Admin\Controllers\vacanciesController.cs" />
     <Compile Include="Areas\Admin\Models\Home.cs" />
     <Compile Include="Areas\Interviewer\Controllers\details_interviewController.cs" />
+    <Compile Include="Areas\Interviewer\Controllers\HomeController.cs" />
     <Compile Include="Areas\Interviewer\InterviewerAreaRegistration.cs" />
+    <Compile Include="Areas\Interviewer\Models\Home.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2100,9 +2102,6 @@
     <Content Include="Areas\Interviewer\Views\web.config" />
     <Content Include="Areas\Interviewer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Interviewer\Views\Shared\_Navigation.cshtml" />
-    <Content Include="Areas\Interviewer\Views\details_interview\Create.cshtml" />
-    <Content Include="Areas\Interviewer\Views\details_interview\Delete.cshtml" />
-    <Content Include="Areas\Interviewer\Views\details_interview\Details.cshtml" />
     <Content Include="Areas\Interviewer\Views\details_interview\Edit.cshtml" />
     <Content Include="Areas\Interviewer\Views\details_interview\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\ResetPassword.cshtml" />
@@ -2115,6 +2114,10 @@
     </Content>
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\vacancies\Hired.cshtml" />
+    <Content Include="Areas\Interviewer\Views\Home\ResetPassword.cshtml" />
+    <Content Include="Areas\Interviewer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Interviewer\Views\details_interview\Vacancy.cshtml" />
+    <Content Include="Areas\Interviewer\Views\details_interview\Hired.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2145,7 +2148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Interviewer\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
